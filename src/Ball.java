@@ -35,10 +35,10 @@ public class Ball {
         yspeed *= -1;
     }
 
-    public void ranSpeed() {
-        xspeed = (int) (Math.random() * 3) + 1;
-        yspeed = (int) (Math.random() * 3) + 1;
-    }
+//    public void ranSpeed() {
+//        xspeed = (int) (Math.random() * 3) + 1;
+//        yspeed = (int) (Math.random() * 3) + 1;
+//    }
 
     public void move() {
         x += xspeed;
@@ -51,25 +51,37 @@ public class Ball {
     }
 
     public void bounce(MyPanel panel) {
-        if (x > (panel.getWidth() - size) || x < size) {
-            ranSpeed();
+//        if (x > (panel.getWidth() - size) || x < size) {
+////            ranSpeed();
+//            xspeed *= -1;
+//            if (x > panel.getWidth()-size) {
+//                x = panel.getWidth()-size;
+//            } else if (x < size) {
+//                x = size;
+//            }
+//            color = new Color((int) (Math.random() * 255), (int) (Math.random() * 255), (int) (Math.random() * 255));
+//        }
+//        if (y > (panel.getWidth() - size) || y < size) {
+////            ranSpeed();
+//            yspeed *= -1;
+//            if (y > panel.getHeight() - size) {
+//                y = panel.getHeight() - size;
+//            } else if (y < size) {
+//                y = size;
+//            }
+//            color = new Color((int) (Math.random() * 255), (int) (Math.random() * 255), (int) (Math.random() * 255));
+//        }
+        if(((x >= panel.getWidth())||(x <= 0)))
+        {
             xspeed *= -1;
-            if (x > panel.getWidth()) {
-                x = panel.getWidth();
-            } else if (x < size) {
-                x = size;
-            }
-            color = new Color((int) (Math.random() * 255), (int) (Math.random() * 255), (int) (Math.random() * 255));
+//            System.out.println("hey");
+            color = new Color((int)((Math.random()*255)),(int)(Math.random()*255),(int)(Math.random()*255));
+
         }
-        if (y > (panel.getWidth() - size) || y < size) {
-            ranSpeed();
+        if(((y >= panel.getHeight())||(y <= 0)))
+        {
             yspeed *= -1;
-            if (y > panel.getHeight() - size) {
-                y = panel.getHeight();
-            } else if (y < size) {
-                y = size;
-            }
-            color = new Color((int) (Math.random() * 255), (int) (Math.random() * 255), (int) (Math.random() * 255));
+            color = new Color((int)((Math.random()*255)),(int)(Math.random()*255),(int)(Math.random()*255));
         }
 
     }
