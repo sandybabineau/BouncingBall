@@ -51,23 +51,23 @@ public class Ball {
     }
 
     public void bounce(MyPanel panel) {
-        if (x > (panel.getWidth() - size) || x < size) {
-            ranSpeed();
+        if (x >= (panel.getWidth() - size) || x < 0) {
+//            ranSpeed();
             xspeed *= -1;
-            if (x > panel.getWidth()) {
-                x = panel.getWidth();
-            } else if (x < size) {
-                x = size;
+            if (x >= panel.getWidth()) {
+                x = panel.getWidth() - size -1;
+            } else if (x < 0) {
+                x = 0;
             }
             color = new Color((int) (Math.random() * 255), (int) (Math.random() * 255), (int) (Math.random() * 255));
         }
-        if (y > (panel.getWidth() - size) || y < size) {
-            ranSpeed();
+        if (y >= (panel.getHeight() - size) || y < 0) {
+//            ranSpeed();
             yspeed *= -1;
-            if (y > panel.getHeight() - size) {
-                y = panel.getHeight();
-            } else if (y < size) {
-                y = size;
+            if (y >= panel.getHeight() - size) {
+                y = panel.getHeight() - size - 1;
+            } else if (y < 0) {
+                y = 0;
             }
             color = new Color((int) (Math.random() * 255), (int) (Math.random() * 255), (int) (Math.random() * 255));
         }
