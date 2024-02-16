@@ -12,9 +12,9 @@ Ball[] wow;
     public MyPanel(){
         setBackground(Color.PINK);
 //        myBall = new Ball(200,200);
-        wow = new Ball[2000];
+        wow = new Ball[20];
         for (int i = 0; i<wow.length;i++){
-            wow[i]=new Ball((int)(Math.random()*500),(int)(Math.random()*500));
+            wow[i]=new Ball((int)(Math.random()*450),(int)(Math.random()*450));
         }
     }
     @Override

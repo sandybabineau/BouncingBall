@@ -52,7 +52,7 @@ public class Ball {
 
     public void bounce(MyPanel panel) {
         if (x >= (panel.getWidth() - size) || x < 0) {
-//            ranSpeed();
+            ranSpeed();
             xspeed *= -1;
             if (x >= panel.getWidth()) {
                 x = panel.getWidth() - size -1;
@@ -62,7 +62,7 @@ public class Ball {
             color = new Color((int) (Math.random() * 255), (int) (Math.random() * 255), (int) (Math.random() * 255));
         }
         if (y >= (panel.getHeight() - size) || y < 0) {
-//            ranSpeed();
+       ranSpeed();
             yspeed *= -1;
             if (y >= panel.getHeight() - size) {
                 y = panel.getHeight() - size - 1;
